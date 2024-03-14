@@ -13,4 +13,8 @@ How to Install it:
 4) Finally, run the application by applying the command 
 `python3 app.py runserver
 `
+
+
+
+
 Created By Team Mystic Minds.
