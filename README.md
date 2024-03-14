@@ -1,4 +1,4 @@
-# KYC-Verification-System-with-Live-Video
+# Onlive Video KYC
 This is a live KYC Verification system.
 
 Tech Stack used
