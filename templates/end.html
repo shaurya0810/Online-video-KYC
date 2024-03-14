@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/main.css" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Charm' rel='stylesheet'>
+    <title>KYC Verification Process</title>
+    <style>
+    .buttonG {
+            background: linear-gradient(to right, #167ac6, #ff049b, #9200de, #ff049b, #167ac6);
+            font-size: 16px;
+            padding: 15px;
+            background-size: 500% 100%;
+            transition: all .6s ease-in-out;
+            white-space: normal;
+            border-radius: 3px;
+            border-width: 0;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 0 20px;
+            font-weight: bold;
+            line-height: 1.1;
+            letter-spacing: 1px;
+        }
+        
+        .buttonG:hover {
+            background-position: -50% 0;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+        }
+        
+        body {
+            display: flex;
+            /*color: whitel background-image: url('/static/images/steps.png');
+            background-repeat: no-repeat;
+            background-position: center;*/
+            background-size: 300% 300%;
+            background-image: linear-gradient(-45deg, #3bade3 0%, #576fe6 25%, #9844b7 51%, #ff357f 100%);
+            -webkit-animation: AnimateBG 20s ease infinite;
+            animation: AnimateBG 20s ease infinite;
+        }
+        
+        @-webkit-keyframes AnimateBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        img.home {
+            border-radius: 8%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            padding: 10px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <section class="multi_step_form" style="background-image: url('/static/images/endpage.png'); background-repeat: no-repeat;
+    background-position: center; background-size: 100% 80%;">
+        <form id="msform">
+            <!-- Tittle -->
+            <div class="tittle" style="font-family: 'Charm'; color:white;">
+                <h1><b>KYC Verification Process</b></h1>
+
+            </div>
+            <br><br>
+            <h2>Verification Process Completed!</h2>
+            <br>
+            <div style="position:center;"><img src="/static/images/KYC_img.png" style="width:50%" class="home"></div>
+            <!-- fieldsets -->
+            <fieldset>
+                <br>
+
+                <a href="{{url_for('created') }}" type="button" class="buttonG">Back to Dashboard</a>
+
+            </fieldset>
+
+        </form>
+    </section>
+    <!-- End Multi step form -->
+    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

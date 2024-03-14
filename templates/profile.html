@@ -1,0 +1,143 @@
+{% extends "bootstrap/base.html" %} {% block title %} Dashboard {% endblock %} {% block styles %} {{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/dashboard.css')}}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    body {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    .button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #f4511e;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 20px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px rgb(223, 223, 223);
+    }
+    
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+        color: white;
+    }
+    
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    
+    .button:hover span {
+        padding-right: 25px;
+    }
+    
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+    
+    .button:active {
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    
+    table {
+        font-size: 26px;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    tr:nth-child(even) {
+        background-color: #dad6d6;
+    }
+    
+    td {
+        padding: 20px;
+    }
+    
+    tr:hover {
+        background-color: #bfd8fa;
+    }
+</style>
+{% endblock %} {% block content %}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="#">KYC VERIFICATION</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/templates/dashboard.html">DASHBOARD</a></li>
+                <li><a href="/templates/created.html">CREATED BY</a></li>
+                <li><a href="/templates/profile.html">PROFILE</a></li>
+                <li><a href="/templates/end.html">LOG OUT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid ">
+    <div class="row ">
+
+
+        <center>
+            <h1 class="page-header ">PROFILE</h1>
+            <br><br>
+            <div class="w3-container">
+                <table lass="w3-table-all w3-card-4">
+                    <tr>
+                        <td>First Name</td>
+                        <td>{{fname}}</td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td>{{lname}}</td>
+                    </tr>
+                    <tr>
+                        <td>User Name</td>
+                        <td>{{uname}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email ID</td>
+                        <td>{{email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td>{{password}}</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>{{status}}</td>
+                    </tr>
+
+                </table>
+            </div>
+        </center>
+
+
+
+    </div>
+</div>
+</div>
+{% endblock %}

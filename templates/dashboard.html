@@ -1,0 +1,155 @@
+{% extends "bootstrap/base.html" %} {% block title %} Dashboard {% endblock %} {% block styles %} {{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/dashboard.css')}}">
+<link href='https://fonts.googleapis.com/css?family=Charm' rel='stylesheet'>
+<style>
+    body {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    .button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #f4511e;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 20px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px rgb(187, 186, 186);
+    }
+    
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+        color: white;
+    }
+    
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    
+    .button:hover span {
+        padding-right: 25px;
+    }
+    
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+    
+    .button:active {
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    
+    .home {
+        border-radius: 8%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 10px;
+    }
+    
+    .para {
+        margin: 0 300px;
+        font-family: 'Charm';
+        font-size: 25px;
+    }
+</style>
+{% endblock %} {% block content %}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="#">KYC VERIFICATION</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/templates/dashboard.html">DASHBOARD</a></li>
+                <li><a href="/templates/created.html">CREATED BY</a></li>
+                <li><a href="/templates/profile.html">PROFILE</a></li>
+                <li><a href="/templates/end.html">LOG OUT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid ">
+    <div class="row ">
+
+
+        <center>
+            <h1 class="page-header " style="font-family: 'Charm'; font-size:50px; padding-bottom:25px;"><b>Welcome, {{ fname }} {{lname}}</b></h1>
+        </center>
+
+        <center>
+            <div class=" tittle " style="font-family: 'Charm'; color:darkorchid; font-size:40px;">
+
+                <b>KYC Verification Process</b>
+
+            </div>
+            <br>
+            <center>
+                <div style="position:center;"><img src="/static/images/kyc_laptop2.png " style="width:30% "></div>
+            </center>
+            <br>
+            <div class="para">
+                <b>The purpose of KYC  (Know Your Customer)  Verification is 
+                    establishing the identity of any customer. 
+                    In online KYC the identity of the person is verified 
+                    electronically via Aadhar-based (or any other ID) substantiation. 
+                    Thus KYC provides  proof of identity of the person to the service provider instantly, 
+                    dispensing the need for the tedious in-person verification.
+                </b>
+            </div>
+            <br><br>
+            <div style="position:center; "><img src="/static/images/KYC_img.png " style="width:25% " class="home"></div>
+            <br><br>
+        </center>
+        <div class="para" style="color:black; ">
+            <center>
+                <h1><b>Complete your E-KYC Verfication in 3 Simple Steps :</b></h1>
+            </center>
+            <h3 style="padding: 0 150px;"><br>
+                <b>STEP 1 : </b> Login & click the "Start Process" button on your Dashboard
+                <br><br>
+                <b>STEP 2 : </b> Upload your aadhar card, driving license or any other ID
+                <br><br>
+                <b>STEP 3 : </b>Click "Open Camera" displayed on the screen and look into the camera till the process the completed
+                <br><br>
+                <center><b>Your Verification process is completed and the result will be displayed on the screen</b></center>
+            </h3>
+
+        </div>
+        <center>
+            <div style="position:center;"><img src="/static/images/kyc_laptop.png " style="width:30% "></div>
+        </center>
+        <center>
+            <h3 class="sub-header ">Click the below button start your KYC Verification</h3>
+            <a href="{{url_for('stp1')}} " class="button " style="vertical-align:middle ">
+                <span>Start Process</span>
+            </a>
+            <br><br>
+        </center>
+
+
+    </div>
+</div>
+{% endblock %}

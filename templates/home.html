@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>KYC VERIFICATION</title>
+</head>
+<style>
+    #text {
+        text-align: center;
+        justify-content: center;
+        margin-top: 100px;
+        font-family: "Tangerine", serif;
+    }
+    
+    body {
+        background: #cc33ff;
+        /*Fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #33ccff 0%, #cc33ff 100%);
+        /*Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #33ccff 0%, #cc33ff 100%);
+        /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background-position: fixed;
+    }
+    
+    img.home {
+        border-radius: 8%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 10px;
+    }
+    
+    .button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #f4511e;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 20px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px rgb(223, 223, 223);
+    }
+    
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+        color: white;
+    }
+    
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    
+    .button:hover span {
+        padding-right: 25px;
+    }
+    
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+    
+    .button:active {
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    
+    h1 {
+        font-size: 50px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div class="container"></div>
+            </div>
+            <div class="col-6">
+                <div id="text">
+                    <div><img src="/static/images/KYC_img.png" style="width:90%" class="home"></div>
+                    <!--div><img src="https://www.ledgerinsights.com/wp-content/uploads/2020/06/know-your-customer-kyc.jpg" style="width:90%" class="home"> </div-->
+                    <br><br>
+                    <h1><b>Welcome to E-KYC Verification !</b></h1>
+                    <br>
+                    <a href="/templates/signup.html" class="button" style="vertical-align:middle"> <span>Get Started</span></a>
+                </div>
+
+            </div>
+            <div class="col-3">
+                <div class="container"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

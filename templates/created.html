@@ -1,0 +1,216 @@
+{% extends "bootstrap/base.html" %} {% block title %} Dashboard {% endblock %} {% block styles %} {{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/dashboard.css')}}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    .button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #f4511e;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 20px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px rgb(223, 223, 223);
+    }
+    
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+        color: white;
+    }
+    
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    
+    .button:hover span {
+        padding-right: 25px;
+    }
+    
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+    
+    .button:active {
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    
+    .fa {
+        padding: 15px;
+        font-size: 30px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        border-radius: 50%;
+        box-shadow: 0 7px #999;
+    }
+    
+    .fa:hover {
+        opacity: 0.7;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+    }
+    
+    .fa:active {
+        opacity: 0.8;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    
+    .fa-linkedin {
+        background: #007bb5;
+        color: white;
+    }
+    
+    .fa-instagram {
+        background: #125688;
+        color: white;
+    }
+    
+    .fa-eye {
+        background: white;
+        padding: 0;
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+        margin: 0;
+        margin-left: 30px;
+        border-radius: 50%;
+        box-shadow: none;
+    }
+    
+    .fa-eye:hover {
+        opacity: 1;
+        color: dodgerblue;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+    }
+    
+    .fa-eye:active {
+        opacity: 1;
+        color: dodgerblue;
+        box-shadow: none;
+        transform: translateY(0px);
+    }
+    
+    .container1 {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    img {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+</style>
+{% endblock %} {% block content %}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="#">KYC VERIFICATION</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/templates/dashboard.html">DASHBOARD</a></li>
+                <li><a href="/templates/created.html">CREATED BY</a></li>
+                <li><a href="/templates/profile.html">PROFILE</a></li>
+                <li><a href="/templates/end.html">LOG OUT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+
+
+        <center>
+            <h1 class="page-header">CREATED BY :</h1>
+        </center>
+
+        <div class="col-sm-9 col-sm-offset-2 col-md-10 col-md-offset-2 main">
+            <div class="row placeholders">
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h3>shaurya agrawal</h3>
+                    <span class="text-muted">Phone : +91 7426998900</span><br>
+                    <span class="text-muted">Email : sp7454@srmist.edu.in</span>
+                    <br><br>
+
+                    <div>
+                        <label>
+                        <a href="" target="blank" class="fa fa-linkedin"></a>
+                    <a href="" target="blank" class="fa fa-instagram"></a>
+                    </label>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h3>swathishri J L</h3>
+                    <span class="text-muted">Phone : +91 9003152608</span><br>
+                    <span class="text-muted">Email : sj8069@srmist.edu.in</span>
+                    <br><br>
+
+                    <div>
+                        <label>
+                        <a href="" target="blank" class="fa fa-linkedin"></a>
+                    <a href="" target="blank" class="fa fa-instagram"></a>
+                    </label>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h3>Angu Srinivas Parmashivam</h3>
+                    <span class="text-muted">Phone : +91 8247846875</span><br>
+                    <span class="text-muted">Email : ap2247@srmist.edu.in</span>
+                    <br><br>
+
+                    <div>
+                        <label>
+                        <a href="" target="blank" class="fa fa-linkedin"></a>
+                    <a href="" target="blank" class="fa fa-instagram"></a>
+                    </label>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+</div>
+{% endblock %}

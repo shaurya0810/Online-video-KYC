@@ -1,0 +1,87 @@
+<!-- {% extends "bootstrap/base.html" %} {% import "bootstrap/wtf.html" as wtf %} {% block title %} Sign Up {% endblock %} {% block styles %} {{super()}} -->
+<link rel="stylesheet" href="/static/css/signin.css">
+
+<style>
+    .buttonG {
+        background: linear-gradient(to right, #167ac6, #ff049b, #9200de, #ff049b, #167ac6);
+        font-size: 16px;
+        padding: 15px;
+        background-size: 500% 100%;
+        transition: all .6s ease-in-out;
+        white-space: normal;
+        border-radius: 3px;
+        border-width: 0;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 0 20px;
+        font-weight: bold;
+        line-height: 1.1;
+        letter-spacing: 1px;
+    }
+    
+    .buttonG:hover {
+        background-position: -50% 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+        text-decoration: none;
+        color: white;
+    }
+    
+    .buttonG:active {
+        background: linear-gradient(to right, #167ac6, #ff049b, #9200de, #ff049b, #167ac6);
+        background-size: 500% 100%;
+        background-position: -50% 0;
+        color: white;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+        text-decoration: none;
+    }
+    
+    body {
+        display: flex;
+        /*color: whitel background-image: url('/static/images/steps.png');
+            background-repeat: no-repeat;
+            background-position: center;*/
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        background-size: 300% 300%;
+        background-image: linear-gradient(-45deg, #3bade3 0%, #576fe6 25%, #9844b7 51%, #ff357f 100%);
+        -webkit-animation: AnimateBG 20s ease infinite;
+        animation: AnimateBG 20s ease infinite;
+    }
+    
+    @keyframes AnimateBG {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+</style>
+<!-- {% endblock %} {% block content %} -->
+<section class="multi_step_form" style="background-image: url('/static/images/endpage.png'); background-repeat: no-repeat;
+    background-position: center; background-size: 60% 100%; padding-left:160px; padding-right:160px;">
+    <div class="container">
+
+        <form class="form-signin" method="POST" action="/signup" style="text-transform: capitalize;">
+            <center>
+                <br><br><br><br><br>
+                <h2 class="form-signin-heading">Sign Up</h2>
+                <hr>
+            </center>
+
+            {{ form.hidden_tag() }} {{ wtf.form_field(form.username) }} {{ wtf.form_field(form.fname) }} {{ wtf.form_field(form.lname) }} {{ wtf.form_field(form.email) }} {{ wtf.form_field(form.password) }}
+            <button class="btn btn-block buttonG" type="submit">SIGN UP</button>
+            <center>
+                <h4>Already have an account? </h4>
+                <a href="/templates/login.html" type="button" class="buttonG">LOGIN</a></center>
+            <br><br><br><br><br>
+        </form>
+
+    </div>
+</section>
+<!-- /container -->
+{% endblock %}
